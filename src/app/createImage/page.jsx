@@ -135,7 +135,7 @@ const CreateForm = () => {
                 {
                   (dalleForm?.generatedImages?.length > 0) ? (
                     dalleForm?.generatedImages?.map((generatedImage, index) => (
-                      <img key={index} src={generatedImage} alt="N/A" className={`w-full h-full aspect-square object-contain ${loading && ("filter: opacity-20")}`} />
+                      <img key={index} src={generatedImage} alt="N/A" className={`w-max h-full aspect-square object-contain ${loading && ("filter: opacity-20")}`} />
                     ))
                   ) : (
                     <Image src={emptyImage} alt="N/A" className={`w-full h-full aspect-square object-contain ${loading && ("filter: opacity-20")}`} />
