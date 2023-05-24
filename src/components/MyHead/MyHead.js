@@ -8,11 +8,11 @@ const MyHead = () => {
             {/* GOOGLE ANALYTICS TAGS */}
 
             {/* Google tag (gtag.js) */}
-            <Script
+            <Script id="analytics_script1"
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-4Q5VG2FDRM"
             ></Script>
-            <Script
+            <Script id="analytics_script2"
             dangerouslySetInnerHTML={{
                 __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -25,13 +25,13 @@ const MyHead = () => {
             ></Script>
 
             {/* GOOGLE ADSENSE TAGS */}
-            <Script
+            <Script id="adsense_script"
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9107720851042204"
             crossorigin="anonymous"
             ></Script>
 
-            <Script
+            <Script id="BMC_script"
             data-name="BMC-Widget"
             data-cfasync="false"
             src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -78,7 +78,7 @@ const MyHead = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>AI Hub Central - A Platform for Multiple AI Technologies</title>
 
-            <Script src="https://accounts.google.com/gsi/client" async defer></Script>
+            <Script id="gsi_script" src="https://accounts.google.com/gsi/client" async defer></Script>
         </>
     );
 }
