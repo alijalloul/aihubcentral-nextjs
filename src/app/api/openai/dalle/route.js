@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import openai from "../../../../../openai";
 
-export async function POST(req: Request) {
+export async function POST(req) {
     const {prompt, nbImages, resolution} = await req.json();
     
     console.log(prompt)

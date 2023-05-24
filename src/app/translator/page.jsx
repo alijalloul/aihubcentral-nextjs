@@ -7,8 +7,6 @@ import LoadingDots from '../../components/LoadingDots/LoadingDots';
 import { languages } from '../../constants/languages';
 
 const Translator = () => {
-    
-
     const excludedDivRef1 = useRef(null);
     const excludedDivRef2 = useRef(null);
 

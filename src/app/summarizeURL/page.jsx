@@ -5,8 +5,7 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 
 import LoadingDots from "../../components/LoadingDots/LoadingDots.js"
 
-const SummarizeURL = () => {
-  
+const SummarizeURL = () => {  
   const MAX_WORDS = 4000;
 
   const [url, setUrl] = useState("");

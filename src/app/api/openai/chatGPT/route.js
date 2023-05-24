@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import openai from "../../../../../openai";
 
-export async function POST(req: Request) {
+export async function POST(req) {
     const {chat} = await req.json();
 
     const gptRes = await openai.createChatCompletion({
@@ -10,7 +10,7 @@ export async function POST(req: Request) {
         messages: chat
     });
 
-    const chatResponse = gptRes.data.choices[0].message.content;
+    const chatResponse = gptRes?.data?.choices[0]?.message?.content;
 
     
     return NextResponse.json({ chatResponse: chatResponse });

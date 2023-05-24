@@ -270,17 +270,7 @@ const Home = () => {
                                                 (chatResponses[index1].includes("data:image/jpeg;base64") && chatResponses[index1].length > 200) ? (
                                                     <img src={chatResponses[index1]} />
                                                 ) : (
-                                                    chatResponses[index1].includes('```') ? (
-                                                        chatResponses[index1].split('```').map((e, index2) => (
-                                                            (index2 % 2 === 0) ? (
-                                                                {e}
-                                                            ) : (
-                                                                <CodeEditor code={e} language="javascript"  />   
-                                                            )
-                                                        ))
-                                                    ) : (
-                                                        chatResponses[index1]
-                                                    )
+                                                    chatResponses[index1]
                                                 )
                                                 
                                             )

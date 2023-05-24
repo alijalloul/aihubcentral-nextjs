@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import openai from "../../../../../openai";
 import fetchTextContentFromUrl from "../../../../functions/fetchTextContentFromUrl.js";
 
-export async function POST(req: Request) {
+export async function POST(req) {
     const {url} = await req.json();
 
     let chat;
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
         messages: chat
     });
 
-    const chatResponse = gptRes.data.choices[0].message.content;
+    const chatResponse = gptRes?.data?.choices[0]?.message?.content;
     console.log(gptRes.data.usage);
 
     return NextResponse.json(chatResponse);

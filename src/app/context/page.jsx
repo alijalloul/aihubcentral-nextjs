@@ -6,8 +6,6 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 import LoadingDots from "../../components/LoadingDots/LoadingDots.js"
 
 const Context = () => {
-  
-
   const [url, setUrl] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setanswer] = useState("");

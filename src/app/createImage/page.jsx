@@ -10,7 +10,6 @@ import emptyImage from "../../img/empty.jpg";
 
 
 const CreateForm = () => {
-  
   const [dalleForm, setDalleForm] = useState({
     name: "",
     prompt: "",

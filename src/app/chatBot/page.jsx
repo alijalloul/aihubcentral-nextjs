@@ -207,12 +207,12 @@ const ChatBot = () => {
                         <p className='mb-2'>Confirm:</p>
                         <img src={image6} className='rounded-lg mb-2'/>
 
-                        <p className='mb-2'>You should get an email from openAI containing a "download data export" button:</p>
+                        <p className='mb-2'>You should get an email from openAI containing a &quot;download data export&quot; button:</p>
                         <img src={image7} className='rounded-lg mb-2'/>
 
-                        <p className='mb-2'>This will download a zip folder containing a “conversations.json”. ONLY upload this file and then you should have your chats uploaded accordingly</p>
+                        <p className='mb-2'>This will download a zip folder containing a &quot;conversations.json&quot;. ONLY upload this file and then you should have your chats uploaded accordingly</p>
                         <img src={image8} className='rounded-lg mb-2'/>
-                     </div>
+                    </div>
                 </div>
                 <div className={`w-full h-full flex ${showImportInfo && " opacity-50 pointer-events-none"} transition-all ease-out duration-200`}>
                 <div className='float-left bg-[#202123] w-[20vw] md:w-[32vw] shadow-xl shadow-black relative z-1 sm:hidden'>
@@ -376,7 +376,7 @@ const ChatBot = () => {
                             className='w-[60%] h-fit px-5 py-3 rounded-lg outline-none border-1 border-gray-300 text-black shadow-[rgba(0,0,0,0.05)_0_0_10px_10px] transition-all duration-300 md:w-[80%]'></input>
                     </div>
                 </div>
-                </div>
+            </div>
         </m.div >
     </LazyMotion> 
   )
