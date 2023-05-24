@@ -5,6 +5,8 @@ import openai from "../../../../../openai";
 export async function POST(req) {
     const {chat} = await req.json();
 
+    console.log(chat);
+    
     const gptRes = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: chat
