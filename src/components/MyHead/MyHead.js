@@ -1,6 +1,6 @@
 'use client';
 
-import Script from "next/Script";
+import Script from "next/script";
 
 const MyHead = () => {
     return (
