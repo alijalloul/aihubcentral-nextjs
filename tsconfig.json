@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/api/openai/chatGPT/route.js", "src/app/chatBot/page.jsx", "src/app/createImage/page.jsx", "src/app/tsst/page.jsx", "src/app/translator/page.jsx", "src/app/summarizeURL/page.jsx", "src/app/context/page.jsx", "src/app/layout.js", "src/app/layout.js", "src/app/layout.jsx"],
+  "exclude": ["node_modules"]
+}
