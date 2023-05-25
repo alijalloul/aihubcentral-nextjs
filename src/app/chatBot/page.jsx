@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { LazyMotion, domAnimation, m } from "framer-motion";
+import Image from 'next/image';
 
 import { setChatsState, setChatsNamesState } from '../GlobalRedux/Chats';
 
@@ -190,28 +191,28 @@ const ChatBot = () => {
                      <p className='mb-2'>To import your chats from chatGPT:</p>
                      <div className='px-3'>
                         <p className='mb-2'>Go to https://chat.openai.com/ and login with your account:</p>
-                        <img src={image1} className='rounded-lg mb-2'/>
+                        <Image src={image1} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>Click on the three dots on the bottom left corner besides your email:</p>
-                        <img src={image2} className='rounded-lg mb-2'/>
+                        <Image src={image2} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>Click on settings:</p>
-                        <img src={image3} className='rounded-lg mb-2'/>
+                        <Image src={image3} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>Click on Data Controls:</p>
-                        <img src={image4} className='rounded-lg mb-2'/>
+                        <Image src={image4} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>Click on Export:</p>
-                        <img src={image5} className='rounded-lg mb-2'/>
+                        <Image src={image5} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>Confirm:</p>
-                        <img src={image6} className='rounded-lg mb-2'/>
+                        <Image src={image6} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>You should get an email from openAI containing a &quot;download data export&quot; button:</p>
-                        <img src={image7} className='rounded-lg mb-2'/>
+                        <Image src={image7} className='rounded-lg mb-2'/>
 
                         <p className='mb-2'>This will download a zip folder containing a &quot;conversations.json&quot;. ONLY upload this file and then you should have your chats uploaded accordingly</p>
-                        <img src={image8} className='rounded-lg mb-2'/>
+                        <Image src={image8} className='rounded-lg mb-2'/>
                     </div>
                 </div>
                 <div className={`w-full h-full flex ${showImportInfo && " opacity-50 pointer-events-none"} transition-all ease-out duration-200`}>
@@ -305,7 +306,7 @@ const ChatBot = () => {
                                         setChatsNames([...chatsName, `Chat ${chatsCounter + 1}`])
                                         setChatsCounter(prevCounter => prevCounter + 1);
                                     }
-                                } className='w-full mb-3 text-black border-2 bg-green-300 border-green-500 py-3 rounded-lg hover:bg-green-400 hover:bg-opacity-30 transition-all'>Create New Chat</button>
+                                } className='w-full mb-3 text-white border-4 bg-blakc border-green-300 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.5)] transition-all'>Create New Chat</button>
                                 <button onClick={() => {
                                     if(selectedChat > 0){
                                         setSelectedChat(prevSelectedChat => prevSelectedChat - 1)
@@ -317,14 +318,14 @@ const ChatBot = () => {
                                         setChatsNames(prevChatsNames => prevChatsNames.filter((_, index) => index !== selectedChat));
                                     }}
                                 } 
-                                className='w-full mb-3 text-black border-2 bg-red-300 border-red-500 py-3 rounded-lg hover:bg-red-400 hover:bg-opacity-30 transition-all'>Delete This Chat</button>
+                                className='w-full mb-3 text-white border-4 bg-blakc border-red-300 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.5)] transition-all'>Delete This Chat</button>
                                 
                                 <button onClick={() => {
                                         setChats([[]]);
                                         setChatsNames(["Chat 1"]);
                                         setChatsCounter(1);
                                     }
-                                } className='w-full mb-3 text-black border-2 bg-yellow-300 border-yellow-500 py-3 rounded-lg hover:bg-yellow-400 hover:bg-opacity-30 transition-all'>Delete All Chats</button>
+                                } className='w-full mb-3 text-white border-4 bg-blakc border-yellow-300 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.8)] transition-all'>Delete All Chats</button>
                             </div>
                         </div>
                     </div>

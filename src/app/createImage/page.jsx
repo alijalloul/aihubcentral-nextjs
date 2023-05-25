@@ -90,11 +90,6 @@ const CreateForm = () => {
               <span className='inline-block bg-clip-text font-bold bg-gradient-to-r from-purple-600 to-red-600 text-transparent' >DALLE-2 AI!&nbsp;</span>
             </p>
             <form className="mb-3">
-              <div>
-                <p>Your Name</p>
-                <input name="name" type="text" placeholder="John White" className=" outline-none mb-5 p-2 w-full rounded-sm border-solid border-2 border-gray-600" onChange={ handleChange }></input>
-              </div>
-
               <div className='mb-3'>
                 <p>Resolution</p>
                 <div className='w-fit flex rounded-md border-2 border-black'>
