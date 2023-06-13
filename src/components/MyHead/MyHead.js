@@ -11,7 +11,7 @@ const MyHead = () => {
             <Script id="analytics_script1"
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-4Q5VG2FDRM"
-            ></Script>
+            defer></Script>
             <Script id="analytics_script2"
             dangerouslySetInnerHTML={{
                 __html: `
@@ -22,14 +22,14 @@ const MyHead = () => {
                 gtag('config', 'G-4Q5VG2FDRM');
                 `,
             }}
-            ></Script>
+            defer></Script>
 
             {/* GOOGLE ADSENSE TAGS */}
             <Script id="adsense_script"
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9107720851042204"
             crossorigin="anonymous"
-            ></Script>
+            defer></Script>
 
             <Script id="BMC_script"
             data-name="BMC-Widget"
@@ -42,7 +42,7 @@ const MyHead = () => {
             data-position="Right"
             data-x_margin="18"
             data-y_margin="18"
-            ></Script>
+            defer></Script>
 
             <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.8.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.2.3",
     "@types/react": "18.2.6",
