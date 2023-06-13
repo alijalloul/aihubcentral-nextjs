@@ -1,18 +1,21 @@
 'use client';
 
 import Script from "next/script";
+import { Partytown } from '@builder.io/partytown/react';
 
 const MyHead = () => {
     return (
         <>
+            <Partytown debug={true} forward={['dataLayer.push']} />
+
             {/* GOOGLE ANALYTICS TAGS */}
 
             {/* Google tag (gtag.js) */}
-            <Script id="analytics_script1"
+            <Script type="text/partytown" id="analytics_script1"
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-4Q5VG2FDRM"
             defer></Script>
-            <Script id="analytics_script2"
+            <Script type="text/partytown" id="analytics_script2"
             dangerouslySetInnerHTML={{
                 __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -22,26 +25,6 @@ const MyHead = () => {
                 gtag('config', 'G-4Q5VG2FDRM');
                 `,
             }}
-            defer></Script>
-
-            {/* GOOGLE ADSENSE TAGS */}
-            <Script id="adsense_script"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9107720851042204"
-            crossorigin="anonymous"
-            defer></Script>
-
-            <Script id="BMC_script"
-            data-name="BMC-Widget"
-            data-cfasync="false"
-            src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-            data-id="alizjalloul"
-            data-description="Support me on Buy me a coffee!"
-            data-message="To support this project, buy me a coffee!"
-            data-color="#5F7FFF"
-            data-position="Right"
-            data-x_margin="18"
-            data-y_margin="18"
             defer></Script>
 
             <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -77,8 +60,6 @@ const MyHead = () => {
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>AI Hub Central - A Platform for Multiple AI Technologies</title>
-
-            <Script id="gsi_script" src="https://accounts.google.com/gsi/client" async defer></Script>
         </>
     );
 }
