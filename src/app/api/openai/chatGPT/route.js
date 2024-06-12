@@ -1,19 +1,18 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 import openai from "../../../../../openai";
 
 export async function POST(req) {
-    const {chat} = await req.json();
+  const { chat } = await req.json();
 
-    console.log(chat);
-    
-    const gptRes = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: chat
-    });
+  console.log(chat);
 
-    const chatResponse = gptRes?.data?.choices[0]?.message?.content;
+  const gptRes = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: chat,
+  });
 
-    
-    return NextResponse.json({ chatResponse: chatResponse });
+  const chatResponse = gptRes?.data?.choices[0]?.message?.content;
+
+  return NextResponse.json({ chatResponse: chatResponse });
 }
