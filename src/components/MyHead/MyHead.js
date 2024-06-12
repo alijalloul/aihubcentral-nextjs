@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { Partytown } from "@builder.io/partytown/react";
 import Head from "next/head";
 
@@ -12,14 +11,14 @@ const MyHead = () => {
       {/* GOOGLE ANALYTICS TAGS */}
 
       {/* Google tag (gtag.js) */}
-      <Script
+      <script
         type="text/partytown"
         id="analytics_script1"
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-4Q5VG2FDRM"
         defer
-      ></Script>
-      <Script
+      ></script>
+      <script
         type="text/partytown"
         id="analytics_script2"
         dangerouslySetInnerHTML={{
@@ -32,7 +31,7 @@ const MyHead = () => {
                 `,
         }}
         defer
-      ></Script>
+      ></script>
 
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
