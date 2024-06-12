@@ -170,7 +170,6 @@ const Header = () => {
             <Image
               alt="N/A"
               src={AllKnowing}
-              alt=""
               className="w-[40px] aspect-square"
             />
           </Link>
@@ -370,17 +369,6 @@ const Header = () => {
                 >
                   Context
                 </Link>
-
-                {
-                  // (user) ? (
-                  //   <div className="flex">
-                  //       <button onClick={ handleLogout } className="font-medium bg-[rgb(217,217,217)] text-black px-4 py-2 rounded-md mr-2"></button>
-                  //       <Image alt="N/A" src={user?.result?.picture} alt={user?.result?.name} className=" rounded-full w-10"/>
-                  //   </div>
-                  // ) : (
-                  //   <Link href="/auth" onClick={(e) => {setTopPosition(e.target.offsetTop); }} className={`${(subdomain === "auth") && ("text-white")} ${showNav ? "left-0" : "left-[400px]"} px-5 py-3 relative z-10 h-fit mr-5 rounded-lg font-medium text-center transition-all ease-in-out duration-[700ms]`}>Login</Link>
-                  // )
-                }
               </div>
             </div>
           </div>
