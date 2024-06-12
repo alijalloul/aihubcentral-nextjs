@@ -59,69 +59,6 @@ After setting up the project, you can start using the application. The main feat
 
 ## Folder Structure
 
-markdown
-
-# Next.js AI-Powered Application
-
-Welcome to the repository for our Next.js application that leverages multiple AI technologies! This project integrates chat completion, image generation, and translation using the OpenAI API. It's built with Tailwind CSS for styling, Redux for state management, and Framer Motion for animations. Additionally, it's SEO-friendly and fully responsive.
-
-## Features
-
-- **AI Technologies**: Integrates chat completion, image generation, and translation using the OpenAI API.
-- **Next.js**: Server-side rendering and static site generation for optimal performance.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **Redux**: State management for a predictable state container.
-- **Framer Motion**: Smooth animations and transitions.
-- **SEO**: Optimized for search engines.
-- **Responsive Design**: Fully responsive and mobile-friendly.
-
-## Installation
-
-To get started with this project, follow these steps:
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://github.com/your-username/nextjs-ai-app.git
-   cd nextjs-ai-app
-   ```
-
-2. **Install dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**:
-   Create a `.env.local` file in the root directory and add your OpenAI API key:
-
-   ```env
-   NEXT_PUBLIC_OPENAI_API_KEY=your_openai_api_key
-   ```
-
-4. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Usage
-
-After setting up the project, you can start using the application. The main features include:
-
-- **Chat Completion**: AI-powered chat interface.
-- **Image Generation**: Generate images from text prompts.
-- **Translation**: Translate text into different languages.
-
-### Available Scripts
-
-- `npm run dev`: Runs the app in development mode.
-- `npm run build`: Builds the app for production.
-- `npm start`: Starts the production build.
-- `npm run lint`: Runs ESLint to check for code quality.
-
-## Folder Structure
-
 nextjs-ai-app/
 ├── public/ # Public assets
 ├── src/
