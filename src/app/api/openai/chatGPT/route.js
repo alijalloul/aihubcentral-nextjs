@@ -5,16 +5,16 @@ import openai from "@/openai";
 export async function POST(req) {
   const { chat } = await req.json();
 
-  console.log(chat);
   try {
     const gptRes =
-      await openai.createChatCompletion({
-        model: "gpt-4o",
+      await openai.chat.completions.create({
         messages: chat,
+
+        model: "gpt-4o-mini",
       });
 
     const chatResponse =
-      gptRes?.data?.choices[0]?.message?.content;
+      gptRes?.choices[0]?.message?.content;
 
     return NextResponse.json({
       chatResponse: chatResponse,

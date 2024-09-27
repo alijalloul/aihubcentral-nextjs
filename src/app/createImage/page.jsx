@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import {
+  LazyMotion,
+  domAnimation,
+  m,
+} from "framer-motion";
 
 import Loader from "../../components/Loader/Loader.js";
 import { dalleSupriseMePrompts } from "../../constants/dallePrompts.js";
@@ -17,7 +21,8 @@ const CreateForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [imagePos, setImagePos] = useState(0);
-  const [resolution, setResolution] = useState(512);
+  const [resolution, setResolution] =
+    useState(512);
   const [errors, setErrors] = useState({
     promptEmpty: false,
     nbImagesEmpty: false,
@@ -29,15 +34,24 @@ const CreateForm = () => {
       ...dalleForm,
       prompt:
         dalleSupriseMePrompts[
-          Math.floor(Math.random() * dalleSupriseMePrompts.length)
+          Math.floor(
+            Math.random() *
+              dalleSupriseMePrompts.length
+          )
         ],
     });
   };
 
   const handleGenerate = async () => {
     let isError = false;
-    if (dalleForm.nbImages < 1 || dalleForm.nbImages > 5) {
-      setErrors({ ...errors, nbImagesEmpty: true });
+    if (
+      dalleForm.nbImages < 1 ||
+      dalleForm.nbImages > 5
+    ) {
+      setErrors({
+        ...errors,
+        nbImagesEmpty: true,
+      });
       isError = true;
     }
     if (!dalleForm.prompt) {
@@ -50,21 +64,27 @@ const CreateForm = () => {
       setLoading(true);
 
       try {
-        const res = await fetch(`/api/openai/dalle`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            prompt: dalleForm.prompt,
-            nbImages: dalleForm.nbImages,
-            resolution: resolution,
-          }),
-        });
+        const res = await fetch(
+          `/api/openai/dalle`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              prompt: dalleForm.prompt,
+              nbImages: dalleForm.nbImages,
+              resolution: resolution,
+            }),
+          }
+        );
 
         const data = await res.json();
 
-        setDalleForm({ ...dalleForm, generatedImages: data.images });
+        setDalleForm({
+          ...dalleForm,
+          generatedImages: data.images,
+        });
         setImagePos(0);
       } catch (error) {
         console.log(error);
@@ -76,7 +96,10 @@ const CreateForm = () => {
   };
 
   const handleChange = (e) => {
-    setDalleForm({ ...dalleForm, [e.target.name]: e.target.value });
+    setDalleForm({
+      ...dalleForm,
+      [e.target.name]: e.target.value,
+    });
   };
   return (
     <LazyMotion features={domAnimation}>
@@ -92,15 +115,27 @@ const CreateForm = () => {
               <span className="inline-block bg-clip-text font-bold bg-gradient-to-r from-pink-500 to-indigo-900 text-transparent">
                 Create&nbsp;
               </span>
-              <span className="inline-block">Stunning&nbsp;</span>
-              <span className="inline-block">And&nbsp;</span>
-              <span className="inline-block">Creative&nbsp;</span>
+              <span className="inline-block">
+                Stunning&nbsp;
+              </span>
+              <span className="inline-block">
+                And&nbsp;
+              </span>
+              <span className="inline-block">
+                Creative&nbsp;
+              </span>
               <span className="inline-block bg-clip-text font-bold bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent">
                 Images&nbsp;
               </span>
-              <span className="inline-block">From &nbsp;</span>
-              <span className="inline-block">Prompts &nbsp;</span>
-              <span className="inline-block">Using &nbsp;</span>
+              <span className="inline-block">
+                From &nbsp;
+              </span>
+              <span className="inline-block">
+                Prompts &nbsp;
+              </span>
+              <span className="inline-block">
+                Using &nbsp;
+              </span>
               <span className="inline-block bg-clip-text font-bold bg-gradient-to-r from-purple-600 to-red-600 text-transparent">
                 DALLE-2 AI!&nbsp;
               </span>
@@ -115,7 +150,8 @@ const CreateForm = () => {
                       setResolution(256);
                     }}
                     className={`px-5 py-3 ${
-                      resolution === 256 && "bg-black text-white"
+                      resolution === 256 &&
+                      "bg-black text-white"
                     } transition-all ease-in-out`}
                   >
                     256x256
@@ -126,7 +162,8 @@ const CreateForm = () => {
                       setResolution(512);
                     }}
                     className={`px-5 py-3 border-x-2 border-black ${
-                      resolution === 512 && "bg-black text-white"
+                      resolution === 512 &&
+                      "bg-black text-white"
                     } transition-all ease-in-out`}
                   >
                     512x512
@@ -137,7 +174,8 @@ const CreateForm = () => {
                       setResolution(1024);
                     }}
                     className={`px-5 py-3 ${
-                      resolution === 1024 && "bg-black text-white"
+                      resolution === 1024 &&
+                      "bg-black text-white"
                     } transition-all ease-in-out`}
                   >
                     1024x1024
@@ -146,7 +184,13 @@ const CreateForm = () => {
               </div>
 
               <div>
-                <p style={{ color: errors.nbImagesEmpty && "red" }}>
+                <p
+                  style={{
+                    color:
+                      errors.nbImagesEmpty &&
+                      "red",
+                  }}
+                >
                   Number of Images
                 </p>
                 <input
@@ -155,25 +199,43 @@ const CreateForm = () => {
                   value={dalleForm.nbImages}
                   onChange={(e) => {
                     handleChange(e);
-                    setErrors({ ...errors, nbImagesEmpty: false });
+                    setErrors({
+                      ...errors,
+                      nbImagesEmpty: false,
+                    });
                   }}
                   style={{
-                    borderColor: `${errors.nbImagesEmpty ? "red" : "black"}`,
+                    borderColor: `${
+                      errors.nbImagesEmpty
+                        ? "red"
+                        : "black"
+                    }`,
                   }}
                   className={`outline-none ${
-                    errors.nbImagesEmpty ? "mb-0" : "mb-2"
+                    errors.nbImagesEmpty
+                      ? "mb-0"
+                      : "mb-2"
                   } p-2 w-[10%] text-center rounded-sm border-solid border-2 border-gray-600`}
                 />
                 <p
                   className={`${
-                    !errors.nbImagesEmpty && "hidden"
+                    !errors.nbImagesEmpty &&
+                    "hidden"
                   } text-red-600 italic mb-2`}
                 >
-                  The number of images should be between 1 and 5{" "}
+                  The number of images should be
+                  between 1 and 5{" "}
                 </p>
               </div>
               <div>
-                <p style={{ color: errors.promptEmpty && "red" }}>Prompt</p>
+                <p
+                  style={{
+                    color:
+                      errors.promptEmpty && "red",
+                  }}
+                >
+                  Prompt
+                </p>
                 <input
                   name="prompt"
                   type="text"
@@ -181,18 +243,28 @@ const CreateForm = () => {
                   value={dalleForm.prompt}
                   onChange={(e) => {
                     handleChange(e);
-                    setErrors({ ...errors, promptEmpty: false });
+                    setErrors({
+                      ...errors,
+                      promptEmpty: false,
+                    });
                   }}
                   style={{
-                    borderColor: `${errors.promptEmpty ? "red" : "black"}`,
+                    borderColor: `${
+                      errors.promptEmpty
+                        ? "red"
+                        : "black"
+                    }`,
                   }}
                   className={`outline-none ${
-                    errors.promptEmpty ? "mb-0" : "mb-2"
+                    errors.promptEmpty
+                      ? "mb-0"
+                      : "mb-2"
                   } p-2 w-full rounded-sm border-solid border-2 border-gray-600`}
                 ></input>
                 <p
                   className={`${
-                    !errors.promptEmpty && "hidden"
+                    !errors.promptEmpty &&
+                    "hidden"
                   } text-red-600 italic mb-2`}
                 >
                   Please fill the prompt
@@ -217,7 +289,11 @@ const CreateForm = () => {
 
         <div className="relative  w-[50vw] flex justify-center items-center md:my-10 md:w-full md:h-[80vh] sm:h-[35vh]">
           <button
-            onClick={() => setImagePos(imagePos > 0 && imagePos - 1)}
+            onClick={() =>
+              setImagePos(
+                imagePos > 0 && imagePos - 1
+              )
+            }
             className="h-[35vw] w-10 rounded-l-lg flex items-center justify-center bg-gray-500 hover:bg-gray-400 active:bg-gray-300 transition-all ease-in-out duration-200 md:h-full text-white"
           >
             &lt;
@@ -230,25 +306,32 @@ const CreateForm = () => {
               )}
               <div
                 className={`relative flex w-full h-full transition-all ease-in-out`}
-                style={{ left: `${-1 * imagePos * 100}%` }}
+                style={{
+                  left: `${-1 * imagePos * 100}%`,
+                }}
               >
-                {dalleForm?.generatedImages?.length > 0 ? (
-                  dalleForm?.generatedImages?.map((generatedImage, index) => (
-                    <img
-                      key={index}
-                      src={generatedImage}
-                      alt="N/A"
-                      className={`w-max h-full aspect-square object-contain ${
-                        loading && "filter: opacity-20"
-                      }`}
-                    />
-                  ))
+                {dalleForm?.generatedImages
+                  ?.length > 0 ? (
+                  dalleForm?.generatedImages?.map(
+                    (generatedImage, index) => (
+                      <img
+                        key={index}
+                        src={generatedImage}
+                        alt="N/A"
+                        className={`w-max h-full aspect-square object-contain ${
+                          loading &&
+                          "filter: opacity-20"
+                        }`}
+                      />
+                    )
+                  )
                 ) : (
                   <Image
                     src={emptyImage}
                     alt="N/A"
                     className={`w-full h-full aspect-square object-contain ${
-                      loading && "filter: opacity-20"
+                      loading &&
+                      "filter: opacity-20"
                     }`}
                   />
                 )}
@@ -258,9 +341,15 @@ const CreateForm = () => {
 
           <button
             onClick={() => {
-              imagePos < dalleForm?.generatedImages?.length - 1 &&
-                setImagePos(imagePos + 1);
-              console.log(imagePos, ":", `left-[-${imagePos * 100}%]`);
+              imagePos <
+                dalleForm?.generatedImages
+                  ?.length -
+                  1 && setImagePos(imagePos + 1);
+              console.log(
+                imagePos,
+                ":",
+                `left-[-${imagePos * 100}%]`
+              );
             }}
             className="h-[35vw] w-10 rounded-r-lg flex items-center justify-center bg-gray-500 hover:bg-gray-400 active:bg-gray-300 transition-all ease-in-out duration-200 md:h-full text-white"
           >

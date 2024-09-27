@@ -7,16 +7,16 @@ export async function POST(req) {
 
   console.log(prompt);
 
-  const dalleRes = await openai.createImage({
+  const dalleRes = await openai.images.generate({
+    model: "dall-e-2",
     prompt: prompt,
     n: parseInt(nbImages),
     size: `${resolution}x${resolution}`,
     response_format: "b64_json",
   });
-  console.log(dalleRes.data.data.length);
 
   const images = [];
-  dalleRes.data.data.forEach((image) => {
+  dalleRes.data.forEach((image) => {
     images.push(
       `data:image/jpeg;base64,${image.b64_json}`
     );
