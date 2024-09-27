@@ -83,8 +83,9 @@ const Header = () => {
             className={`absolute bg-black h-full rounded-lg transition-all ease-in-out duration-500`}
           ></div>
 
-          {directories.map((directory) => (
+          {directories.map((directory, index) => (
             <NavButton
+              key={index}
               href={directory.path}
               text={directory.name}
             />
@@ -107,13 +108,16 @@ const Header = () => {
           >
             <div className="relative flex justify-center items-center w-full h-max">
               <div className="w-full flex flex-col justify-center items-center ">
-                {directories.map((directory) => (
-                  <MobileNavButton
-                    href={directory.path}
-                    text={directory.name}
-                    showNav={showNav}
-                  />
-                ))}
+                {directories.map(
+                  (directory, index) => (
+                    <MobileNavButton
+                      key={index}
+                      href={directory.path}
+                      text={directory.name}
+                      showNav={showNav}
+                    />
+                  )
+                )}
               </div>
             </div>
           </div>
