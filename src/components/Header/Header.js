@@ -1,15 +1,11 @@
 "use client";
 
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
-import AllKnowing from "../../img/allKnowing.png";
+import AllKnowing from "@/public/images/allKnowing.png";
 
 const Header = () => {
   const directories = [
@@ -40,35 +36,25 @@ const Header = () => {
     function handleClickOutside(event) {
       if (
         excludedDivRef.current &&
-        !excludedDivRef.current.contains(
-          event.target
-        )
+        !excludedDivRef.current.contains(event.target)
       ) {
         setShowNav(false);
       }
     }
 
     if (showNav) {
-      window.addEventListener(
-        "click",
-        handleClickOutside
-      );
+      window.addEventListener("click", handleClickOutside);
     }
 
     return () => {
-      window.removeEventListener(
-        "click",
-        handleClickOutside
-      );
+      window.removeEventListener("click", handleClickOutside);
     };
   }, [showNav]);
   return (
     <header className="w-full flex justify-center items-center border-b border-b-[#e6ebf4] px-10 md:px-5">
       <div className="w-full mx-4 my-4 flex justify-between items-center md:mx-2">
         <div className="flex justify-center items-center">
-          <h1 className=" font-bold text-3xl mr-5 md:w-min">
-            AI Hub Central
-          </h1>
+          <h1 className=" font-bold text-3xl mr-5 md:w-min">AI Hub Central</h1>
           <Link href="/">
             <Image
               alt="N/A"
@@ -92,14 +78,8 @@ const Header = () => {
           ))}
         </div>
 
-        <div
-          ref={excludedDivRef}
-          className="hidden md:visible md:block"
-        >
-          <Hamburger
-            action={handleNavSwitchState}
-            showNav={showNav}
-          />
+        <div ref={excludedDivRef} className="hidden md:visible md:block">
+          <Hamburger action={handleNavSwitchState} showNav={showNav} />
 
           <div
             className={`${
@@ -108,16 +88,14 @@ const Header = () => {
           >
             <div className="relative flex justify-center items-center w-full h-max">
               <div className="w-full flex flex-col justify-center items-center ">
-                {directories.map(
-                  (directory, index) => (
-                    <MobileNavButton
-                      key={index}
-                      href={directory.path}
-                      text={directory.name}
-                      showNav={showNav}
-                    />
-                  )
-                )}
+                {directories.map((directory, index) => (
+                  <MobileNavButton
+                    key={index}
+                    href={directory.path}
+                    text={directory.name}
+                    showNav={showNav}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -135,9 +113,7 @@ const NavButton = ({ href, text }) => {
   return (
     <Link
       href={href}
-      className={`${
-        pathname === href && "text-white bg-black"
-      } 
+      className={`${pathname === href && "text-white bg-black"} 
     
       px-5 py-3 relative z-10 h-fit mr-5 rounded-lg font-medium `}
     >
@@ -146,19 +122,13 @@ const NavButton = ({ href, text }) => {
   );
 };
 
-const MobileNavButton = ({
-  href,
-  text,
-  showNav,
-}) => {
+const MobileNavButton = ({ href, text, showNav }) => {
   const pathname = usePathname();
 
   return (
     <Link
       href={href}
-      className={`${
-        pathname === href && "text-white bg-black"
-      } ${
+      className={`${pathname === href && "text-white bg-black"} ${
         showNav ? "left-0" : "left-[200px]"
       } w-full py-3 relative z-10 h-fit font-medium text-center transition-all ease-in-out duration-[200ms]`}
     >

@@ -1,22 +1,22 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { setChatsState, setChatsNamesState } from "../GlobalRedux/Chats.js";
+import { setChatsNamesState, setChatsState } from "../GlobalRedux/Chats.js";
 
 import LoadingDots from "../../components/LoadingDots/LoadingDots.js";
 
-import image1 from "../../img/1.png";
-import image2 from "../../img/2.png";
-import image3 from "../../img/3.png";
-import image4 from "../../img/4.png";
-import image5 from "../../img/5.png";
-import image6 from "../../img/6.png";
-import image7 from "../../img/7.png";
-import image8 from "../../img/8.png";
+import image1 from "@/public/images/1.png";
+import image2 from "@/public/images/2.png";
+import image3 from "@/public/images/3.png";
+import image4 from "@/public/images/4.png";
+import image5 from "@/public/images/5.png";
+import image6 from "@/public/images/6.png";
+import image7 from "@/public/images/7.png";
+import image8 from "@/public/images/8.png";
 
 const ChatBot = () => {
   const dispatch = useDispatch();
