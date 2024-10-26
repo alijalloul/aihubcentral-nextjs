@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 
+import fetchTextContentFromUrl from "@/functions/fetchTextContentFromUrl";
 import openai from "@/openai";
-import fetchTextContentFromUrl from "../../../../functions/fetchTextContentFromUrl.js";
 
 export async function POST(req) {
   const { url } = await req.json();
+
+  console.log("url: ", url);
 
   let chat;
   if (
