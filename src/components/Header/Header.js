@@ -51,10 +51,10 @@ const Header = () => {
     };
   }, [showNav]);
   return (
-    <header className="w-full flex justify-center items-center border-b border-b-[#e6ebf4] px-10 md:px-5">
-      <div className="w-full mx-4 my-4 flex justify-between items-center md:mx-2">
+    <header className="w-full flex justify-center items-center border-b border-b-[#e6ebf4] px-10 sm:px-5">
+      <div className="w-full mx-4 my-4 flex justify-between items-center sm:mx-2">
         <div className="flex justify-center items-center">
-          <h1 className=" font-bold text-3xl mr-5 md:w-min">AI Hub Central</h1>
+          <h1 className=" font-bold text-3xl mr-5 sm:w-min">AI Hub Central</h1>
           <Link href="/">
             <Image
               alt="N/A"
@@ -64,7 +64,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="relative w-fit flex justify-center items-center rounded-lg md:hidden">
+        <div className="relative w-fit flex justify-center items-center rounded-lg sm:hidden">
           <div
             className={`absolute bg-black h-full rounded-lg transition-all ease-in-out duration-500`}
           ></div>
@@ -78,7 +78,7 @@ const Header = () => {
           ))}
         </div>
 
-        <div ref={excludedDivRef} className="hidden md:visible md:block">
+        <div ref={excludedDivRef} className="hidden sm:visible sm:block">
           <Hamburger action={handleNavSwitchState} showNav={showNav} />
 
           <div

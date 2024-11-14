@@ -160,7 +160,7 @@ const Translator = () => {
         exit={{ opacity: 0 }}
         className="w-full h-fit min-h-[calc(100vh-73px)] mb-10 flex flex-col items-center"
       >
-        <div className="w-[50%] mt-5 mb-10 text-6xl leading-[5rem] md:w-[80%] md:text-5xl md:mb-5">
+        <div className="w-[50%] mt-5 mb-10 text-6xl leading-[5rem] sm:w-[80%] sm:text-5xl sm:mb-5">
           <span className="inline-block bg-[rgb(255,50,0)] bg-[linear-gradient(45deg,rgba(255,50,0,1)_0%,rgba(255,132,0,1)_100%)] bg-clip-text text-transparent font-bold">
             Translate &nbsp;
           </span>
@@ -174,13 +174,13 @@ const Translator = () => {
           </span>
         </div>
 
-        <div className="w-[80%] h-[50vh] flex justify-center items-center md:flex-col md:h-[95vh]">
-          <div className="w-[40%] h-full mr-5  flex flex-col border-2 border-gray-150 shadow-md shadow-gray-500 rounded-lg overflow-hidden md:w-full md:h-[30%] md:mb-5 md:mr-0">
+        <div className="w-[80%] h-[50vh] flex justify-center items-center sm:flex-col sm:h-[95vh]">
+          <div className="w-[40%] h-full mr-5  flex flex-col border-2 border-gray-150 shadow-md shadow-gray-500 rounded-lg overflow-hidden sm:w-full sm:h-[30%] sm:mb-5 sm:mr-0">
             {selectLanguageFrom === true ? (
               <div className="h-full">
                 <input
                   ref={excludedDivRef1}
-                  className="w-full h-[10%] text-center md:h-[20%]"
+                  className="w-full h-[10%] text-center sm:h-[20%]"
                   placeholder="Search"
                   onChange={handleSearchLanguageFrom}
                 ></input>
@@ -189,14 +189,14 @@ const Translator = () => {
                     <button
                       key={index}
                       onClick={(e) => handleLanguageFrom(e, language)}
-                      className="w-full h-[15%]  md:h-[33%]"
+                      className="w-full h-[15%]  sm:h-[33%]"
                     >{`${language.language}/${language.nativeWriting}`}</button>
                   ))}
                 </div>
               </div>
             ) : (
               <>
-                <div className="w-full h-[10%] md:h-[20%]">
+                <div className="w-full h-[10%] sm:h-[20%]">
                   <button
                     onMouseUp={switchStateFrom}
                     className="w-full h-full border"
@@ -219,17 +219,17 @@ const Translator = () => {
 
           <button
             onClick={handleTranslate}
-            className="mr-5 px-5 py-5 bg-[rgb(255,50,0)] bg-[linear-gradient(45deg,rgba(255,50,0,1)_0%,rgba(255,132,0,1)_100%)] text-white text-xl font-bold tracking-widest rounded-xl md:mb-5 md:py-2 md:mr-0"
+            className="mr-5 px-5 py-5 bg-[rgb(255,50,0)] bg-[linear-gradient(45deg,rgba(255,50,0,1)_0%,rgba(255,132,0,1)_100%)] text-white text-xl font-bold tracking-widest rounded-xl sm:mb-5 sm:py-2 sm:mr-0"
           >
             Translte
           </button>
 
-          <div className="w-[40%] h-full flex flex-col border-2 border-gray-150 shadow-md shadow-gray-500 rounded-lg overflow-hidden md:w-full md:h-[30%]">
+          <div className="w-[40%] h-full flex flex-col border-2 border-gray-150 shadow-md shadow-gray-500 rounded-lg overflow-hidden sm:w-full sm:h-[30%]">
             {selectLanguageTo === true ? (
               <div className="h-full">
                 <input
                   ref={excludedDivRef2}
-                  className="w-full h-[10%] text-center md:h-[20%]"
+                  className="w-full h-[10%] text-center sm:h-[20%]"
                   placeholder="Search"
                   onChange={handleSearchLanguageTo}
                 ></input>
@@ -239,14 +239,14 @@ const Translator = () => {
                       key={index}
                       value={language}
                       onClick={(e) => handleLanguageTo(e, language)}
-                      className="w-full h-[15%] md:h-[33%]"
+                      className="w-full h-[15%] sm:h-[33%]"
                     >{`${language.language}/${language.nativeWriting}`}</button>
                   ))}
                 </div>
               </div>
             ) : (
               <>
-                <div className="w-full h-[10%] md:h-[20%]">
+                <div className="w-full h-[10%] sm:h-[20%]">
                   <button
                     onMouseUp={switchStateTo}
                     className="w-full h-full border"

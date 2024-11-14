@@ -200,7 +200,7 @@ const ChatBot = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="h-[calc(100vh-73px)] w-full bg-slate-50 md:h-[calc(100vh-120px)]"
+        className="h-[calc(100vh-73px)] w-full bg-slate-50 sm:h-[calc(100vh-120px)]"
       >
         <div
           ref={excludedDivRef2}
@@ -261,7 +261,7 @@ const ChatBot = () => {
             showImportInfo && " opacity-50 pointer-events-none"
           } transition-all ease-out duration-200`}
         >
-          <div className="float-left bg-[#202123] w-[20vw] md:w-[32vw] shadow-xl shadow-black relative z-1 sm:hidden">
+          <div className="float-left bg-[#202123] w-[20vw] shadow-xl shadow-black relative z-1 sm:hidden">
             <div className="h-full flex justify-between items-center text-white">
               <div className="w-full h-[90%] flex items-center flex-col justify-between">
                 <div
@@ -276,7 +276,7 @@ const ChatBot = () => {
                       } hover:bg-[#6b6e82]  transition-all`}
                     >
                       {changeNameState && index1 === nameChangeIndex ? (
-                        <div className=" w-[80%] h-full md:w-[60%]">
+                        <div className=" w-[80%] h-full sm:w-[60%]">
                           <input
                             ref={
                               index1 === nameChangeIndex ? excludedDivRef : null
@@ -311,7 +311,7 @@ const ChatBot = () => {
                           {chatsNamesState[index1]}
                         </button>
                       )}
-                      <div className="flex justify-between items-center w-[20%]  md:w-[40%] h-[80%]">
+                      <div className="flex justify-between items-center w-[20%]  sm:w-[40%] h-[80%]">
                         <button
                           onMouseUp={() => {
                             setChangeNameState(true);
@@ -511,18 +511,18 @@ const ChatBot = () => {
                 chatsInfo[selectedChat].map((message, index1) => (
                   <div className="w-full h-fit" key={index1}>
                     {message.role === "user" ? (
-                      <div className="userMessages px-48 bg-white w-full py-8 border-y-2 border-gray-300 md:px-10">
+                      <div className="userMessages px-48 bg-white w-full py-8 border-y-2 border-gray-300 sm:px-10">
                         {message.content}
                       </div>
                     ) : (
-                      <div className="gptMessages font-semibold px-48 bg-gray-100 text-black w-full py-8 md:px-10">
+                      <div className="gptMessages font-semibold px-48 bg-gray-100 text-black w-full py-8 sm:px-10">
                         {message.content}
                       </div>
                     )}
 
                     {loading &&
                       index1 === chatsInfo[selectedChat].length - 1 && (
-                        <div className="gptMessages font-semibold px-48 bg-gray-100 text-black w-full py-8 md:px-10">
+                        <div className="gptMessages font-semibold px-48 bg-gray-100 text-black w-full py-8 sm:px-10">
                           <div className=" text-3xl tracking-widest">
                             <LoadingDots />
                           </div>
@@ -540,7 +540,7 @@ const ChatBot = () => {
                 value={message.content}
                 onChange={handleMessageChange}
                 onKeyDown={handleMessageKeyDown}
-                className="w-[60%] h-fit px-5 py-3 rounded-lg outline-none border-1 border-gray-300 text-black shadow-[rgba(0,0,0,0.05)_0_0_10px_10px] transition-all duration-300 md:w-[80%]"
+                className="w-[60%] h-fit px-5 py-3 rounded-lg outline-none border-1 border-gray-300 text-black shadow-[rgba(0,0,0,0.05)_0_0_10px_10px] transition-all duration-300 sm:w-[80%]"
               ></input>
             </div>
           </div>

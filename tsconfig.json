@@ -24,6 +24,6 @@
       "/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/api/openai/chatGPT/route.js", "src/app/chat/page.jsx", "src/app/createImage/page.jsx", "src/app/tsst/page.jsx", "srcsrc/app/translat/page.jsx","src/app/summarize/page.jsx", "src/app/context/page.jsx", "src/app/layout.js", "src/app/layout.js", "src/app/layout.jsx", "src/app/page.jsx", "src/app/GlobalRedux/store.js", "src/app/GlobalRedux/provider.js", "src/app/api/openai/translator/route.js", "src/app/api/openai/summarize/route.js", "src/app/api/openai/dalle/route.js", "src/app/api/openai/context/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/api/openai/chatGPT/route.js", "src/app/chat/page.jsx", "src/app/createImage/page.jsx", "src/app/tsst/page.jsx", "srcsrc/app/translat/page.jsx","src/app/summarize/page.jsx", "src/app/context/page.jsx", "src/app/layout.jsx", "src/app/layout.jsx", "src/app/layout.jsx", "src/app/page.jsx", "src/app/GlobalRedux/store.js", "src/app/GlobalRedux/provider.js", "src/app/api/openai/translator/route.js", "src/app/api/openai/summarize/route.js", "src/app/api/openai/dalle/route.js", "src/app/api/openai/context/route.js"],
   "exclude": ["node_modules"]
 }

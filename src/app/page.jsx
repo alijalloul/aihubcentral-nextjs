@@ -1,28 +1,18 @@
 "use client";
 
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-} from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 import useIsVisible from "../functions/useIsVisible";
 
 const Home = () => {
   const excludedDivRef = useRef(null);
-  const [expandFunctions, setExpandFunctions] =
-    useState(false);
+  const [expandFunctions, setExpandFunctions] = useState(false);
 
-  const [headerText, setHeaderText] =
-    useState("");
+  const [headerText, setHeaderText] = useState("");
   const text =
-    "AI Hub Central is a platform   that brings together multiple AI technologies, making it easy for users to explore and implement AI in their projects for free and without the need to login.";
+    "AI Hub Central is a platform that brings together multiple AI technologies, making it easy for users to explore and implement AI in their projects for free and without the need to login.";
 
   useEffect(() => {
     let i = 0;
@@ -43,9 +33,7 @@ const Home = () => {
     function handleClickOutside(event) {
       if (
         excludedDivRef.current &&
-        !excludedDivRef.current.contains(
-          event.target
-        )
+        !excludedDivRef.current.contains(event.target)
       ) {
         setExpandFunctions(false);
       }
@@ -53,18 +41,12 @@ const Home = () => {
 
     // Add event listener when component mounts
     if (expandFunctions) {
-      window.addEventListener(
-        "click",
-        handleClickOutside
-      );
+      window.addEventListener("click", handleClickOutside);
     }
 
     // Remove event listener when component unmounts
     return () => {
-      window.removeEventListener(
-        "click",
-        handleClickOutside
-      );
+      window.removeEventListener("click", handleClickOutside);
     };
   }, [expandFunctions]);
 
@@ -76,17 +58,17 @@ const Home = () => {
         exit={{ opacity: 0 }}
         className="flex-1 flex flex-col justify-between items-center my-5 mx-10"
       >
-        <div className="px-28  w-full ">
-          <h2 className="text-6xl mt-5 md:text-6xl sm:text-6xl font-bold mb-10 ">
+        <div className="flex  items-start flex-col w-full sm:mb-5">
+          <h2 className="text-6xl mt-5 sm:text-6xl sm:text-6xl font-bold mb-10 ">
             Welcome to AI Hub Central
           </h2>
 
-          <h2 className="text-4xl mt-5 md:text-5xl leading-[1.2] sm:text-4xl">
+          <h2 className="text-4xl mt-5 sm:text-5xl leading-[1.2] sm:text-4xl">
             {headerText}
           </h2>
         </div>
 
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center sm:flex-col sm:space-y-4">
           <HomeCard type={1} />
           <HomeCard type={2} />
           <HomeCard type={3} />
@@ -129,14 +111,8 @@ const HomeCard = ({ type }) => {
 
   return (
     <Link
-      href={
-        type === 1
-          ? "/chat"
-          : type === 2
-          ? "/createImage"
-          : "/summarize"
-      }
-      className={`flex justify-start items-center flex-col w-[30%] h-[300px] bg-white rounded shadow-lg border-2 ${borderColor} group relative transition-all p-0 hover:p-6`}
+      href={type === 1 ? "/chat" : type === 2 ? "/createImage" : "/summarize"}
+      className={`flex justify-start items-center flex-col w-[30%] h-[300px] sm:w-full bg-white rounded shadow-lg border-2 ${borderColor} group relative transition-all p-0 hover:p-6`}
     >
       <div
         className={`w-full h-[300px] flex justify-center items-center text-2xl px-10 py-4 ${bgColor} text-white font-semibold rounded transition-all group-hover:mb-6 group-hover:h-[100px] group-hover:w-[95%]`}

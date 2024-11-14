@@ -53,11 +53,11 @@ const SummarizeURL = () => {
         exit={{ opacity: 0 }}
         className="w-full h-fit min-h-[calc(100vh-73px)] flex justify-center"
       >
-        <div className="w-[40%] h-full mt-0 flex flex-col items-center mb-10 md:w-[80%]">
+        <div className="w-[40%] h-full mt-0 flex flex-col items-center mb-10 sm:w-[80%]">
           <div className="w-full">
             <div
               style={{ textOverflow: "word-break" }}
-              className=" text-6xl mb-5 leading-[5rem] md:text-5xl"
+              className=" text-6xl mb-5 leading-[5rem] sm:text-5xl"
             >
               <span className="inline-block bg-[rgb(255,132,0)] bg-[linear-gradient(45deg,rgba(255,132,0,1)_0%,rgba(255,215,0,1)_100%)] bg-clip-text text-transparent font-bold">
                 Summarize &nbsp;{" "}

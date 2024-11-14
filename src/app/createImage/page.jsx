@@ -93,11 +93,11 @@ const CreateForm = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="h-fit min-h-[calc(100vh-73px)] w-full px-10 flex bg-slate-50 justify-between md:flex-col"
+        className="h-fit min-h-[calc(100vh-73px)] w-full px-10 flex bg-slate-50 justify-between sm:flex-col"
       >
-        <div className="pl-10 flex flex-col justify-center md:pl-0">
-          <div className="h-fit w-[80%] md:w-full">
-            <p className="w-full my-2 text-black text-6xl mb-5 leading-[4rem] md:text-4xl">
+        <div className="pl-10 flex flex-col justify-center sm:pl-0">
+          <div className="h-fit w-[80%] sm:w-full">
+            <p className="w-full my-2 text-black text-6xl mb-5 leading-[4rem] sm:text-4xl">
               <span className="inline-block bg-clip-text font-bold bg-gradient-to-r from-pink-500 to-indigo-900 text-transparent">
                 Create&nbsp;
               </span>
@@ -117,13 +117,13 @@ const CreateForm = () => {
             <form className="mb-3">
               <div className="mb-3">
                 <p>Resolution</p>
-                <div className="w-fit flex rounded-md border-2 border-black">
+                <div className="w-full flex justify-between items-center rounded-md border-2 border-black sm:border">
                   <button
                     onClick={(e) => {
                       e.preventDefault();
                       setResolution(256);
                     }}
-                    className={`px-5 py-3 ${
+                    className={`w-1/3  py-3 sm:text-sm text-center ${
                       resolution === 256 && "bg-black text-white"
                     } transition-all ease-in-out`}
                   >
@@ -134,7 +134,7 @@ const CreateForm = () => {
                       e.preventDefault();
                       setResolution(512);
                     }}
-                    className={`px-5 py-3 border-x-2 border-black ${
+                    className={`w-1/3 py-3 border-x-2 border-black sm:text-sm text-center sm:border-x ${
                       resolution === 512 && "bg-black text-white"
                     } transition-all ease-in-out`}
                   >
@@ -145,7 +145,7 @@ const CreateForm = () => {
                       e.preventDefault();
                       setResolution(1024);
                     }}
-                    className={`px-5 py-3 ${
+                    className={`w-1/3  py-3 sm:text-sm text-center ${
                       resolution === 1024 && "bg-black text-white"
                     } transition-all ease-in-out`}
                   >
@@ -240,16 +240,16 @@ const CreateForm = () => {
           </div>
         </div>
 
-        <div className="relative  w-[50vw] flex justify-center items-center md:my-10 md:w-full md:h-[80vh] sm:h-[35vh]">
+        <div className="relative  w-[50vw] flex justify-center items-center sm:my-10 sm:w-full sm:h-[35vh]">
           <button
             onClick={() => setImagePos(imagePos > 0 && imagePos - 1)}
-            className="h-[35vw] w-10 rounded-l-lg flex items-center justify-center bg-gray-500 hover:bg-gray-400 active:bg-gray-300 transition-all ease-in-out duration-200 md:h-full text-white"
+            className="h-[35vw] w-10 rounded-l-lg flex items-center justify-center bg-gray-500 hover:bg-gray-400 active:bg-gray-300 transition-all ease-in-out duration-200 sm:h-full text-white"
           >
             &lt;
           </button>
 
-          <div className="md:h-[80vh]  sm:h-[35vh] md:aspect-square">
-            <div className="relative h-[35vw] aspect-square overflow-hidden md:h-full">
+          <div className=" sm:h-[35vh] sm:aspect-square">
+            <div className="relative h-[35vw] aspect-square overflow-hidden sm:h-full">
               {loading && (
                 <Loader stylingT="absolute aspect-square absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
               )}
@@ -289,7 +289,7 @@ const CreateForm = () => {
                 setImagePos(imagePos + 1);
               console.log(imagePos, ":", `left-[-${imagePos * 100}%]`);
             }}
-            className="h-[35vw] w-10 rounded-r-lg flex items-center justify-center bg-gray-500 hover:bg-gray-400 active:bg-gray-300 transition-all ease-in-out duration-200 md:h-full text-white"
+            className="h-[35vw] w-10 rounded-r-lg flex items-center justify-center bg-gray-500 hover:bg-gray-400 active:bg-gray-300 transition-all ease-in-out duration-200 sm:h-full text-white"
           >
             &gt;
           </button>
